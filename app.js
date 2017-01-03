@@ -27,6 +27,7 @@ function arrayDoubler(arr) {
   }
 
   return [arr[0] * 2, ...arrayDoubler(arr.slice(1))];
+
 }
 
 // # 3
@@ -51,7 +52,8 @@ function nthTriangular(n) {
 
 }
 
-// # 5
+// # 5a
+// Return a string
 function stringSplit(str, separator) {
 
   if (!str.length) {
@@ -60,5 +62,23 @@ function stringSplit(str, separator) {
 
   return (str[0] === separator ? ',' : str[0]) +
     stringSplit(str.slice(1), separator);
+
+}
+
+// # 5b
+// Return an array of strings
+function stringSplit2(str, separator = ',', arr = [""]) {
+
+  if (!str.length) {
+    return arr;
+  }
+
+  if (str[0] === separator) {
+    arr.push("");
+  } else {
+    arr[arr.length - 1] += str[0];
+  }
+
+  return stringSplit2(str.slice(1), separator, arr);
 
 }
