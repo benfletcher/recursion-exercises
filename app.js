@@ -52,15 +52,13 @@ function nthTriangular(n) {
 }
 
 // # 5
-// "hello", "e" => "h|e|llo"
 function stringSplit(str, separator) {
 
   if (!str.length) {
     return "";
   }
 
-  return (str[0] === separator
-      ? `,`
-      : str[0]) +
+  return (str[0] === separator ? ',' : str[0]) +
     stringSplit(str.slice(1), separator);
+
 }
