@@ -3,16 +3,16 @@
 // # 1
 function oddOrEven(num) {
 
-  if (num < 1) {
-    return 'invalid input';
+  if (num < 0) {
+    return '>= 0, please';
+  }
+
+  if (num === 0) {
+    return 'even';
   }
 
   if (num === 1) {
     return 'odd';
-  }
-
-  if (num === 2) {
-    return 'even';
   }
 
   return oddOrEven(num - 2);
@@ -37,7 +37,7 @@ function stringReverse(str) {
     return "";
   }
 
-  return str[str.length - 1] + stringReverse(str.slice(0, str.length - 1));
+  return str[str.length - 1] + stringReverse(str.slice(0, -1));
 
 }
 
