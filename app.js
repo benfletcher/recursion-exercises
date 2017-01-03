@@ -22,8 +22,8 @@ function oddOrEven(num) {
 // # 2
 function arrayDoubler(arr) {
 
-  if (arr.length === 1) {
-    return [arr[0] * 2];
+  if (!arr.length) {
+    return [];
   }
 
   return [arr[0] * 2, ...arrayDoubler(arr.slice(1))];
